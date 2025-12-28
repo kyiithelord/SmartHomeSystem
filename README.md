@@ -2,6 +2,30 @@
 
 A simple Smart Home dashboard built with Qt Quick (QML) and a small C++ backend. It includes a device manager, list model, and a QML UI with a room filter and device tiles for lights, thermostats, plugs, and cameras.
 
+## Quick start: step-by-step
+1. Install prerequisites
+   - Linux (Debian/Ubuntu):
+     - `sudo apt-get update && sudo apt-get install -y cmake g++ qt6-base-dev qt6-declarative-dev qml6-module-qtquick qml6-module-qtquick-controls` (package names may vary by distro)
+   - Fedora:
+     - `sudo dnf install cmake gcc-c++ qt6-qtbase-devel qt6-qtdeclarative-devel qt6-qtquickcontrols2-devel`
+   - Arch:
+     - `sudo pacman -S cmake gcc qt6-base qt6-declarative qt6-quickcontrols2`
+   - Using Qt Online Installer (all platforms):
+     - Install Qt 6.x with components: Qt Quick, Qt Qml, Qt Quick Controls 2. Note the kit path, e.g. `/path/to/Qt/6.6.3/gcc_64`.
+2. Open a terminal in the project root
+3. Configure the build
+   - If using distro packages:
+     - `cmake -S . -B build`
+   - If using Qt Online Installer (set your kit path):
+     - `cmake -S . -B build -DCMAKE_PREFIX_PATH=/path/to/Qt/6.x.x/<qt_kit>`
+4. Build the app
+   - `cmake --build build -j`
+5. Run the app
+   - `./build/smarthome`
+
+Optional: Open in Qt Creator
+- File → Open File or Project… → select `CMakeLists.txt` → Configure Project → Run.
+
 ## Prerequisites
 - Qt 6.2+ with components:
   - Qt Quick
